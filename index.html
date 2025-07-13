@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Xin lỗi Meii ❤</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #ffe6f2;
+      overflow: hidden;
+      text-align: center;
+      font-family: 'Comic Sans MS', sans-serif;
+    }
+    img {
+      max-width: 80%;
+      margin: 40px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    #message {
+      font-size: 2.2em;
+      color: #e60073;
+      margin: 20px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity:1; } 50% { opacity:0.4; }
+    }
+    .heart {
+      position: fixed;
+      top: -50px;
+      color: #ff0066;
+      font-size: 24px;
+      animation: drop 3s linear infinite;
+    }
+    @keyframes drop {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgm" src="bgmusic.mp3" autoplay loop></audio>
+  <img src="meii.jpg" alt="Ảnh của anh">
+  <div id="message">Iu bé nhất trên đờii 💖</div>
+
+  <script>
+    // Tạo hiệu ứng tim rơi
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+      heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 3000);
+    }, 300);
+  </script>
+</body>
+</html>
